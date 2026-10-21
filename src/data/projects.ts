@@ -23,6 +23,8 @@ export interface Project {
   featured: boolean;
   hasDedicatedPage: boolean;
   actionText: string;
+  githubUrl?: string;
+  liveUrl?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -89,6 +91,107 @@ export const PROJECTS: Project[] = [
     actionText: "Acessar Estudo de Caso Completo",
   },
   {
+    id: "gerador-certificados",
+    slug: "gerador-certificados",
+    title: "Gerador de Certificados de Treinamento em SST",
+    shortTitle: "Certificados SST",
+    category: "saas",
+    categoryLabel: "Produto SaaS SST / Web App",
+    status: "producao",
+    statusLabel: "No Ar na Vercel",
+    tagline:
+      "Aplicação web corporativa para emissão ágil e padronizada de certificados de treinamentos de Normas Regulamentadoras (NR-1, NR-10, NR-35) com controle de carga horária e conformidade jurídica.",
+    targetAudience:
+      "Instrutores de SST, técnicos de segurança do trabalho, clínicas ocupacionais e empresas com obrigatoriedade de reciclagem e capacitação de funcionários.",
+    businessProblem:
+      "Preencher manualmente certificados em softwares de design ou editores de texto para turmas inteiras consome horas de trabalho administrativo, com alto índice de erros de digitação de nomes, CPFs, datas e ementas obrigatórias por norma.",
+    solution:
+      "Aplicação que recebe os dados dos alunos e do treinamento, valida as informações obrigatórias e emite certificados formatados em alta resolução, prontos para assinatura e entrega aos órgãos fiscalizadores.",
+    architectureHighlights: [
+      "Processamento otimizado para geração e formatação de certificados sem distorção visual",
+      "Templates padronizados em conformidade com as exigências do Ministério do Trabalho",
+      "Deploy e hospedagem contínua na Vercel com carregamento instantâneo",
+      "Código aberto e documentado no GitHub",
+    ],
+    metrics: [
+      {
+        value: "Instantâneo",
+        label: "Emissão em 1 Clique",
+        description: "Geração automática para lotes de participantes",
+      },
+      {
+        value: "100%",
+        label: "Conformidade NR",
+        description: "Campos obrigatórios validados pelo sistema",
+      },
+      {
+        value: "No Ar",
+        label: "Deploy Ativo",
+        description: "Hospedado na Vercel para uso imediato",
+      },
+    ],
+    technologies: ["Python", "Web App", "Vercel", "Geração de Documentos", "SST"],
+    featured: true,
+    hasDedicatedPage: true,
+    actionText: "Ver Estudo de Caso & Demo",
+    githubUrl: "https://github.com/MateusAssisOliveira/gerador-certificados-treinamento",
+    liveUrl: "https://gerador-certificados-treinamento.vercel.app",
+  },
+  {
+    id: "doce-caixa",
+    slug: "doce-caixa",
+    title: "App Joyce Cakes & Doce Caixa — Gestão para Confeitarias",
+    shortTitle: "App Joyce Cakes",
+    category: "saas",
+    categoryLabel: "SaaS Comercial / Web App",
+    status: "producao",
+    statusLabel: "No Ar na Vercel",
+    tagline:
+      "Aplicação moderna em TypeScript para gestão operacional de confeitarias: controle de insumos, fichas técnicas de receitas, cálculo de margem real de lucro e catálogo comercial.",
+    targetAudience:
+      "Confeitarias artesanais, doceiras, microempreendedores da gastronomia e pequenos negócios de alimentação.",
+    businessProblem:
+      "Confeiteiros frequentemente precificam doces no 'olhômetro' sem considerar a variação de custo de embalagens, farinha, chocolates e mão de obra, gerando vendas com margem negativa ou prejuízos invisíveis.",
+    solution:
+      "Sistema que decompõe produtos em fichas técnicas detalhadas: a cada receita cadastrada, o sistema calcula o custo exato por grama ou unidade, sugere o preço de venda para a margem desejada e centraliza o catálogo de pedidos.",
+    architectureHighlights: [
+      "Desenvolvido em TypeScript com componentização modular e interface responsiva",
+      "Modelagem de dados com decomposição de ingredientes e fichas técnicas dinâmicas",
+      "Deploy contínuo e escalável na nuvem Vercel",
+      "Interface limpa e intuitiva desenvolvida para agilidade no dia a dia da cozinha",
+    ],
+    metrics: [
+      {
+        value: "Exato",
+        label: "Custo por Receita",
+        description: "Decomposição por gramatura e custo de insumos",
+      },
+      {
+        value: "TypeScript",
+        label: "Tipagem Estrita",
+        description: "Arquitetura robusta de ponta a ponta",
+      },
+      {
+        value: "No Ar",
+        label: "Deploy Vercel",
+        description: "Acessível de qualquer dispositivo móvel",
+      },
+    ],
+    technologies: [
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "Vercel",
+      "Gestão de Estoque",
+      "Finanças B2B",
+    ],
+    featured: true,
+    hasDedicatedPage: true,
+    actionText: "Ver Estudo de Caso & Demo",
+    githubUrl: "https://github.com/MateusAssisOliveira/app_joyceCakes",
+    liveUrl: "https://app-joyce-cakes.vercel.app",
+  },
+  {
     id: "automacoes-corporativas",
     slug: "automacoes-corporativas",
     title: "Automação de Processos & RPA em Sistemas Corporativos",
@@ -138,89 +241,6 @@ export const PROJECTS: Project[] = [
     featured: true,
     hasDedicatedPage: false,
     actionText: "Ver Detalhes da Solução",
-  },
-  {
-    id: "doce-caixa",
-    slug: "doce-caixa",
-    title: "Doce Caixa — Sistema de Gestão para Confeitarias",
-    shortTitle: "Doce Caixa SaaS",
-    category: "sistema",
-    categoryLabel: "Visão de Produto & Micro-SaaS",
-    status: "concepcao",
-    statusLabel: "Concepção & Modelagem",
-    tagline:
-      "Concepção de plataforma de gestão orientada a pequenos negócios gastronômicos: controle de estoque por ficha técnica, precificação por insumo e fluxo de caixa.",
-    targetAudience:
-      "Confeitarias artesanais, doceiras e microempreendedores do setor de alimentação.",
-    businessProblem:
-      "Dificuldade de calcular o custo real de receitas complexas com desperdício de insumos, falta de controle de lucratividade por unidade vendida e desorganização de fluxo de caixa em cadernos ou planilhas improvisadas.",
-    solution:
-      "Modelagem de produto intuitivo onde o cadastro da receita desconta automaticamente os insumos do estoque e calcula a margem líquida real com base no custo atualizado dos ingredientes.",
-    architectureHighlights: [
-      "Modelagem de banco de dados relacional com decomposição de ingredientes e fichas técnicas",
-      "Módulo de cálculo dinâmico de custo de produção e sugestão de preço de venda",
-      "Interface minimalista e voltada para quem não tem familiaridade com finanças complexas",
-    ],
-    metrics: [
-      {
-        value: "100%",
-        label: "Controle de Ficha",
-        description: "Custo exato por grama e unidade produzida",
-      },
-      {
-        value: "Simples",
-        label: "Interface Ágil",
-        description: "Planejada para celular e computador",
-      },
-    ],
-    technologies: [
-      "Modelagem de SaaS",
-      "Fichas Técnicas",
-      "Arquitetura de Dados",
-      "Finanças B2B",
-    ],
-    featured: false,
-    hasDedicatedPage: false,
-    actionText: "Conhecer a Proposta",
-  },
-  {
-    id: "gestao-desktop",
-    slug: "gestao-desktop",
-    title: "Aplicação Desktop de Gestão Comercial e Estoque",
-    shortTitle: "Gestão Comercial Desktop",
-    category: "sistema",
-    categoryLabel: "Engenharia de Software Desktop",
-    status: "estudo",
-    statusLabel: "Fundamentos & Prática",
-    tagline:
-      "Sistema desktop explorando arquitetura em camadas, interface moderna com Flet e persistência em banco relacional MySQL.",
-    targetAudience:
-      "Comércio local e fundamentos de consolidação de código modular.",
-    businessProblem:
-      "Necessidade de criar uma ferramenta local estável, rápida e independente de conexão de internet externa para controle de inventário e vendas.",
-    solution:
-      "Aplicação desktop com controle de entradas, saídas, níveis críticos de estoque e relatórios consolidados em banco de dados relacional.",
-    architectureHighlights: [
-      "Construção de interface desktop moderna utilizando o motor Flet (Python + Flutter)",
-      "Camada de persistência relacional com MySQL estruturado e integridade referencial",
-      "Separação de responsabilidades entre interface visual e regras de acesso ao banco",
-    ],
-    metrics: [
-      {
-        value: "Local",
-        label: "Zero Latência",
-        description: "Operação rápida diretamente no hardware local",
-      },
-      {
-        value: "ACID",
-        label: "Integridade MySQL",
-        description: "Transações seguras de cadastro e movimentação",
-      },
-    ],
-    technologies: ["Python", "Flet", "MySQL", "Arquitetura Modular"],
-    featured: false,
-    hasDedicatedPage: false,
-    actionText: "Ver Arquitetura",
   },
 ];
 
