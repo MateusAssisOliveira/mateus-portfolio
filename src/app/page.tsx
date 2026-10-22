@@ -5,293 +5,353 @@ import Link from "next/link";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { PROJECTS } from "@/data/projects";
 import { Nr1Preview } from "@/components/previews/Nr1Preview";
-import { CertificadosPreview } from "@/components/previews/CertificadosPreview";
-import { JoyceCakesPreview } from "@/components/previews/JoyceCakesPreview";
-import { RpaPreview } from "@/components/previews/RpaPreview";
 
 export default function Home() {
-  const renderPreview = (id: string) => {
-    switch (id) {
-      case "saas-nr1":
-        return <Nr1Preview />;
-      case "gerador-certificados":
-        return <CertificadosPreview />;
-      case "doce-caixa":
-        return <JoyceCakesPreview />;
-      case "automacoes-corporativas":
-        return <RpaPreview />;
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div className="flex flex-col min-h-screen w-full bg-[#000000] text-[#ededed] overflow-x-hidden">
+    <div className="flex flex-col min-h-screen w-full bg-[#0f0f11] text-[#f4f4f5] overflow-x-hidden">
       <Navbar />
 
-      <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-16 sm:space-y-24">
+      <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-12 sm:py-20 space-y-20 sm:space-y-28">
         {/* ======================================================== */}
-        {/* HERO SECTION DE ALTO IMPACTO (OPÇÃO 1 - FOCO B2B)        */}
+        {/* HERO SECTION AUTORAL (THE INDEPENDENT FOUNDER)           */}
         {/* ======================================================== */}
-        <section className="space-y-6 max-w-3xl">
-          {/* Badge de Disponibilidade */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300">
-            <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-            <span>Disponível para projetos sob medida & licenciamento SaaS</span>
+        <section className="space-y-8 max-w-3xl">
+          {/* Eyebrow de Assinatura */}
+          <div className="inline-flex items-center gap-2 font-mono text-xs text-amber-400">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_8px_rgba(245,158,11,0.6)]" />
+            <span className="tracking-wider uppercase">Engenharia de Software & Produtos Digitais</span>
           </div>
 
-          {/* Título Principal */}
-          <h1 className="text-2xl sm:text-5xl font-bold tracking-tight text-white leading-[1.15]">
-            Transformo gargalos operacionais e normas regulatórias em{" "}
-            <span className="text-zinc-400">produtos digitais escaláveis.</span>
+          {/* Título com Serif Editorial */}
+          <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight text-zinc-100 leading-[1.2]">
+            Construo plataformas regulatórias, sistemas multi-tenant e{" "}
+            <span className="font-serif-title italic font-normal text-amber-200/95 text-[1.15em] tracking-normal">
+              automações que eliminam retrabalho corporativo.
+            </span>
           </h1>
 
-          {/* Subtítulo com posicionamento claro */}
-          <p className="text-sm sm:text-lg text-zinc-300 leading-relaxed max-w-2xl">
-            Desenvolvedor Full-Stack e Fundador Técnico. Uno domínio pericial de regras
-            de negócio (SST e NR-1) a uma arquitetura moderna em{" "}
-            <strong className="text-white font-medium">TypeScript e Next.js</strong> e
-            automações em <strong className="text-white font-medium">Python</strong> para
-            eliminar o retrabalho manual das empresas.
+          {/* Subtítulo Autoral na Primeira Pessoa */}
+          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl">
+            Uno o conhecimento pericial das normas de Medicina e Segurança do Trabalho (NR-1)
+            a uma arquitetura segura em <strong className="text-zinc-200 font-medium">TypeScript</strong>,{" "}
+            <strong className="text-zinc-200 font-medium">Next.js</strong> e{" "}
+            <strong className="text-zinc-200 font-medium">PostgreSQL com RLS</strong>.
+            Desenvolvo ferramentas autorais para resolver gargalos reais onde o erro manual custa caro.
           </p>
 
-          {/* Botões de Ação Imediata (Estilo Vercel/Linear - Preto no Branco) */}
-          <div className="flex flex-wrap items-center gap-3 pt-2">
+          {/* Botões de Ação Táteis */}
+          <div className="flex flex-wrap items-center gap-3.5 pt-2">
             <Link
               href="#projetos"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold text-xs sm:text-sm transition-all shadow-sm"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs sm:text-sm transition-all shadow-sm"
             >
-              <span>Explorar Projetos & Demos</span>
-              <ArrowDown className="w-4 h-4" />
+              <span>Explorar criações</span>
+              <ArrowDown className="w-3.5 h-3.5 text-zinc-700" />
             </Link>
 
             <Link
-              href="https://wa.me/5500000000000?text=Ol%C3%A1%20Mateus,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20uma%20solu%C3%A7%C3%A3o%20de%20software."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-100 border border-zinc-800 text-xs sm:text-sm transition-colors"
+              href="#sobre"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white text-xs sm:text-sm transition-colors"
             >
-              <span>Conversar no WhatsApp</span>
-              <ArrowUpRight className="w-4 h-4 text-zinc-400" />
+              <span>Minha trajetória</span>
+            </Link>
+
+            <Link
+              href="mailto:contato@mateusassis.dev"
+              className="inline-flex items-center gap-1.5 text-zinc-400 hover:text-amber-400 text-xs sm:text-sm transition-colors ml-1"
+            >
+              <span>Entrar em contato</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
-          {/* Barra de Prova Rápida (Métricas Reais) */}
-          <div className="pt-6 border-t border-[#1c1c1c] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-mono text-zinc-400">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-400" />
-              <span>3 Produtos no ar na Vercel</span>
+          {/* Barra de Telemetria e Métricas Integradas */}
+          <div className="pt-8 border-t border-[#1c1c20] grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs">
+            <div>
+              <span className="font-mono text-xl font-semibold text-zinc-100 block">3 Produtos</span>
+              <span className="text-zinc-500 text-[11px] mt-0.5 block">No ar na Vercel</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-400" />
-              <span>+50 Empresas automatizadas em lote</span>
+            <div>
+              <span className="font-mono text-xl font-semibold text-zinc-100 block">+50 Empresas</span>
+              <span className="text-zinc-500 text-[11px] mt-0.5 block">Automatizadas em lote</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-zinc-400" />
-              <span>Arquitetura 100% autoral</span>
+            <div>
+              <span className="font-mono text-xl font-semibold text-zinc-100 block">80%+ Redução</span>
+              <span className="text-zinc-500 text-[11px] mt-0.5 block">No tempo de laudos</span>
+            </div>
+            <div>
+              <span className="font-mono text-xl font-semibold text-zinc-100 block">100% Autoral</span>
+              <span className="text-zinc-500 text-[11px] mt-0.5 block">Regras periciais & RLS</span>
             </div>
           </div>
         </section>
 
         {/* ======================================================== */}
-        {/* SHOWCASE DOS PROJETOS                                    */}
+        {/* VITRINE EM DESTAQUE (SAAS NR-1)                          */}
         {/* ======================================================== */}
-        <section id="projetos" className="space-y-8 sm:space-y-10">
-          <div className="border-b border-[#1c1c1c] pb-3 flex items-baseline justify-between">
-            <h2 className="text-xs sm:text-sm font-medium uppercase tracking-wider text-zinc-400">
-              Projetos & Aplicações em Destaque
-            </h2>
-            <span className="text-xs text-zinc-500 font-mono">
-              {PROJECTS.length} produtos
+        <section id="projetos" className="space-y-6">
+          <div className="flex items-baseline justify-between pb-3 border-b border-[#1c1c20]">
+            <span className="text-xs font-mono font-medium tracking-wider uppercase text-zinc-500">
+              Projeto em Destaque
+            </span>
+            <span className="text-xs font-mono text-zinc-500">
+              01 / 04
             </span>
           </div>
 
-          <div className="space-y-8 sm:space-y-10">
-            {PROJECTS.map((project, index) => (
-              <div
-                key={project.id}
-                className="rounded-2xl border border-[#222222] bg-[#0c0c0e] p-4 sm:p-6 md:p-8 hover:border-zinc-700/80 transition-all shadow-lg w-full overflow-hidden"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center w-full">
-                  {/* Lado Esquerdo: Conteúdo, Métricas e Ações */}
-                  <div className="lg:col-span-7 space-y-4 sm:space-y-5 w-full min-w-0">
-                    {/* Header do Card */}
-                    <div className="flex flex-wrap items-center justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[11px] sm:text-xs font-mono font-medium text-zinc-200 bg-zinc-900 border border-zinc-700/60 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md">
-                          {project.categoryLabel}
-                        </span>
-                        <span className="text-xs font-mono text-zinc-500">
-                          0{index + 1}
-                        </span>
-                      </div>
+          <div className="rounded-2xl border border-[#242429] bg-[#141417] p-6 sm:p-8 md:p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Lado Esquerdo: Engenharia & Proposta de Valor */}
+              <div className="lg:col-span-6 space-y-5">
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-mono text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded">
+                    SaaS Regulatório B2B
+                  </span>
+                  <span className="text-[11px] font-mono text-zinc-500">
+                    Em Produção
+                  </span>
+                </div>
 
-                      <span className="text-[11px] sm:text-xs font-mono text-zinc-400 bg-zinc-900 px-2 py-0.5 sm:py-1 rounded border border-white/5">
-                        {project.statusLabel}
-                      </span>
-                    </div>
+                <div className="space-y-2">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-zinc-100 tracking-tight">
+                    SaaS de Gestão de Riscos Psicossociais (NR-1)
+                  </h2>
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                    Plataforma corporativa ponta a ponta para clínicas de Medicina do Trabalho.
+                    Digitaliza formulários com cartazes e QR Code, calcula a inversão da escala Likert,
+                    valida o quórum pericial de 70% e emite laudos periciais completos em PDF
+                    via Chromium headless na nuvem em menos de 5 segundos.
+                  </p>
+                </div>
 
-                    {/* Título & Descrição */}
-                    <div className="space-y-1.5 sm:space-y-2">
-                      <h3 className="text-lg sm:text-2xl font-bold tracking-tight text-white break-words">
-                        {project.title}
-                      </h3>
-                      <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
-                        {project.tagline}
-                      </p>
-                    </div>
-
-                    {/* Métricas Reais do Projeto */}
-                    {project.metrics && project.metrics.length > 0 && (
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5 pt-1 w-full">
-                        {project.metrics.slice(0, 3).map((metric, i) => (
-                          <div
-                            key={i}
-                            className="p-2 sm:p-2.5 rounded-lg bg-zinc-950/80 border border-[#1f1f22] min-w-0 overflow-hidden"
-                          >
-                            <span className="text-sm sm:text-base font-bold font-mono text-white block truncate">
-                              {metric.value}
-                            </span>
-                            <span className="text-[11px] sm:text-xs text-zinc-300 font-medium block truncate mt-0.5">
-                              {metric.label}
-                            </span>
-                            {metric.description && (
-                              <span className="text-[10px] text-zinc-500 block truncate mt-0.5">
-                                {metric.description}
-                              </span>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Stack */}
-                    <div className="flex flex-wrap items-center gap-1.5 text-xs text-zinc-400 font-mono">
-                      <span className="text-zinc-500 font-sans mr-1 text-[11px]">Stack:</span>
-                      {project.technologies.slice(0, 5).map((tech, i) => (
-                        <span
-                          key={i}
-                          className="px-2 py-0.5 rounded bg-zinc-900 border border-white/5 text-zinc-300 text-[11px]"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Botões de Ação */}
-                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 pt-2">
-                      {project.hasDedicatedPage && (
-                        <Link
-                          href={`/projetos/${project.slug}`}
-                          className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold text-xs sm:text-sm transition-all shadow-sm"
-                        >
-                          <span>Estudo de caso</span>
-                          <span aria-hidden="true">&rarr;</span>
-                        </Link>
-                      )}
-
-                      {project.liveUrl && (
-                        <Link
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-[#27272a] text-xs sm:text-sm transition-colors"
-                        >
-                          <span>Testar no ar</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </Link>
-                      )}
-
-                      {project.githubUrl && (
-                        <Link
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 px-3 py-2 sm:py-2.5 rounded-lg text-zinc-400 hover:text-white text-xs sm:text-sm transition-colors"
-                        >
-                          <span>GitHub</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
-                        </Link>
-                      )}
-                    </div>
+                {/* Especificações de Arquitetura em Linha (Sem cards-in-card) */}
+                <div className="grid grid-cols-2 gap-4 py-3 border-y border-[#202025] text-xs">
+                  <div>
+                    <span className="font-mono text-zinc-200 font-semibold block text-sm">70% Quórum</span>
+                    <span className="text-zinc-500 text-[11px]">Validação pericial mínima</span>
                   </div>
-
-                  {/* Lado Direito: Demonstração Visual */}
-                  <div className="lg:col-span-5 w-full min-w-0">
-                    {renderPreview(project.id)}
+                  <div>
+                    <span className="font-mono text-zinc-200 font-semibold block text-sm">&lt; 5s Serverless</span>
+                    <span className="text-zinc-500 text-[11px]">PDF A4 via Puppeteer</span>
+                  </div>
+                  <div>
+                    <span className="font-mono text-zinc-200 font-semibold block text-sm">PostgreSQL RLS</span>
+                    <span className="text-zinc-500 text-[11px]">Isolamento estrito multi-tenant</span>
+                  </div>
+                  <div>
+                    <span className="font-mono text-zinc-200 font-semibold block text-sm">Next.js 14 + Supabase</span>
+                    <span className="text-zinc-500 text-[11px]">Arquitetura de alto desempenho</span>
                   </div>
                 </div>
+
+                {/* Ações */}
+                <div className="flex flex-wrap items-center gap-3 pt-1">
+                  <Link
+                    href="/projetos/saas-nr1"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs sm:text-sm transition-all shadow-sm"
+                  >
+                    <span>Estudo de caso completo</span>
+                    <span aria-hidden="true">&rarr;</span>
+                  </Link>
+
+                  <span className="text-xs text-zinc-500 font-mono hidden sm:inline">
+                    Disponível para demonstração técnica
+                  </span>
+                </div>
               </div>
-            ))}
+
+              {/* Lado Direito: Preview Fiel e Realista */}
+              <div className="lg:col-span-6 w-full min-w-0">
+                <Nr1Preview />
+              </div>
+            </div>
           </div>
         </section>
 
         {/* ======================================================== */}
-        {/* SOBRE MIM                                                */}
+        {/* LISTA EDITORIAL DOS DEMAIS PROJETOS                      */}
         {/* ======================================================== */}
-        <section id="sobre" className="space-y-4 sm:space-y-6 border-t border-[#1c1c1c] pt-10 sm:pt-12">
-          <h2 className="text-xs sm:text-sm font-medium uppercase tracking-wider text-zinc-400">
-            Sobre mim & Trajetória
-          </h2>
+        <section className="space-y-6">
+          <div className="flex items-baseline justify-between pb-3 border-b border-[#1c1c20]">
+            <span className="text-xs font-mono font-medium tracking-wider uppercase text-zinc-500">
+              Aplicações & Automações Adicionais
+            </span>
+            <span className="text-xs font-mono text-zinc-500">
+              3 Soluções
+            </span>
+          </div>
 
-          <div className="text-xs sm:text-base text-zinc-300 leading-relaxed space-y-3 sm:space-y-4 max-w-2xl">
-            <p>
-              Meu contato com a programação surgiu no ambiente de trabalho, dentro
-              de uma clínica de Medicina e Segurança do Trabalho. Diante de uma rotina
-              manual repetitiva envolvendo mais de 50 empresas em um sistema legado,
-              desenvolvi meu primeiro script de automação para eliminar aquele retrabalho.
-            </p>
-            <p>
-              A partir daquela experiência, direcionei meus estudos para a resolução
-              de problemas reais de negócio. Cursei Ciência da Computação até o 5º período
-              e segui aprofundando minha formação de forma prática e independente.
-            </p>
-            <p>
-              Hoje, meu fluxo de trabalho combina rigor arquitetural e domínio do negócio
-              com o uso de Inteligência Artificial para acelerar o desenvolvimento. Atuo
-              definindo as regras, a segurança do banco (como Row Level Security) e a
-              conformidade normativa, garantindo que o software entregue seja seguro,
-              rápido e comercialmente viável.
-            </p>
+          <div className="divide-y divide-[#1c1c20] border-t border-[#1c1c20]">
+            {/* Projeto 02: Gerador de Certificados */}
+            <article className="py-7 grid grid-cols-1 md:grid-cols-12 gap-4 items-baseline group">
+              <div className="md:col-span-1 font-mono text-xs text-zinc-500">
+                02.
+              </div>
+              <div className="md:col-span-4 space-y-1">
+                <h3 className="text-base font-semibold text-zinc-100 group-hover:text-amber-400 transition-colors">
+                  <Link href="/projetos/gerador-certificados">
+                    Gerador de Certificados SST
+                  </Link>
+                </h3>
+                <div className="flex items-center gap-2 text-[11px] font-mono text-zinc-500">
+                  <span>Web App</span>
+                  <span>•</span>
+                  <span>Python & Vercel</span>
+                </div>
+              </div>
+              <div className="md:col-span-5 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                Emissão em lote de certificados periciais em conformidade com as Normas Regulamentadoras (NR-1, NR-10, NR-35). Elimina digitação manual repetitiva de turmas inteiras e previne erros cadastrais perante órgãos fiscalizadores.
+              </div>
+              <div className="md:col-span-2 flex md:justify-end items-center gap-3 text-xs">
+                <Link
+                  href="/projetos/gerador-certificados"
+                  className="text-zinc-300 hover:text-white transition-colors"
+                >
+                  Estudo &rarr;
+                </Link>
+                <Link
+                  href="https://gerador-certificados-treinamento.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-500 hover:text-amber-400 transition-colors inline-flex items-center gap-0.5"
+                >
+                  <span>Demo</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </article>
+
+            {/* Projeto 03: App Joyce Cakes */}
+            <article className="py-7 grid grid-cols-1 md:grid-cols-12 gap-4 items-baseline group">
+              <div className="md:col-span-1 font-mono text-xs text-zinc-500">
+                03.
+              </div>
+              <div className="md:col-span-4 space-y-1">
+                <h3 className="text-base font-semibold text-zinc-100 group-hover:text-amber-400 transition-colors">
+                  <Link href="/projetos/doce-caixa">
+                    App Joyce Cakes & Doce Caixa
+                  </Link>
+                </h3>
+                <div className="flex items-center gap-2 text-[11px] font-mono text-zinc-500">
+                  <span>TypeScript</span>
+                  <span>•</span>
+                  <span>React & Finanças</span>
+                </div>
+              </div>
+              <div className="md:col-span-5 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                Aplicação de gestão operacional e fichas técnicas dinâmicas para confeitarias artesanais. Decomposição de custos por grama de ingrediente e cálculo automático de preço de venda e margem de lucro real.
+              </div>
+              <div className="md:col-span-2 flex md:justify-end items-center gap-3 text-xs">
+                <Link
+                  href="/projetos/doce-caixa"
+                  className="text-zinc-300 hover:text-white transition-colors"
+                >
+                  Estudo &rarr;
+                </Link>
+                <Link
+                  href="https://app-joyce-cakes.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-zinc-500 hover:text-amber-400 transition-colors inline-flex items-center gap-0.5"
+                >
+                  <span>Demo</span>
+                  <ArrowUpRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </article>
+
+            {/* Projeto 04: RPA Corporativo em Python */}
+            <article className="py-7 grid grid-cols-1 md:grid-cols-12 gap-4 items-baseline group">
+              <div className="md:col-span-1 font-mono text-xs text-zinc-500">
+                04.
+              </div>
+              <div className="md:col-span-4 space-y-1">
+                <h3 className="text-base font-semibold text-zinc-100 group-hover:text-amber-400 transition-colors">
+                  RPA Corporativo em Python
+                </h3>
+                <div className="flex items-center gap-2 text-[11px] font-mono text-zinc-500">
+                  <span>Python</span>
+                  <span>•</span>
+                  <span>Playwright & Automação</span>
+                </div>
+              </div>
+              <div className="md:col-span-5 text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                Robôs de automação inteligente para eliminação de tarefas repetitivas em sistemas web legados sem APIs públicas. Processamento tolerante a falhas de mais de 50 empresas em lote com relatórios automatizados de auditoria.
+              </div>
+              <div className="md:col-span-2 flex md:justify-end items-center gap-3 text-xs">
+                <span className="text-zinc-500 font-mono text-[11px]">
+                  Solução Operacional
+                </span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* ======================================================== */}
+        {/* SEÇÃO SOBRE MIM & HISTÓRIA REAL                          */}
+        {/* ======================================================== */}
+        <section id="sobre" className="space-y-6 border-t border-[#1c1c20] pt-12 sm:pt-16">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-10">
+            <div className="md:col-span-4 space-y-2">
+              <span className="text-xs font-mono font-medium tracking-wider uppercase text-zinc-500 block">
+                Trajetória & Filosofia
+              </span>
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-100 font-serif-title italic">
+                De um script no escritório a produtos no ar.
+              </h2>
+            </div>
+
+            <div className="md:col-span-8 text-xs sm:text-base text-zinc-400 leading-relaxed space-y-4">
+              <p>
+                Meu contato com a programação surgiu no ambiente de trabalho, dentro de uma
+                clínica de Medicina e Segurança do Trabalho. Diante de uma rotina diária repetitiva
+                envolvendo mais de 50 empresas em um sistema legado dos anos 2000, desenvolvi meu
+                primeiro script em Python para eliminar aquele retrabalho e evitar erros manuais.
+              </p>
+              <p>
+                A partir daquela experiência, direcionei meus estudos para a resolução prática de
+                problemas de negócio. Cursei Ciência da Computação até o 5º período e segui
+                aprofundando minha formação de forma independente e orientada a produtos reais.
+              </p>
+              <p>
+                Hoje, meu trabalho combina rigor arquitetural com velocidade de execução:
+                defino as regras de negócio, a segurança do banco (como Row Level Security no PostgreSQL)
+                e a conformidade normativa, garantindo que cada ferramenta entregue seja rápida,
+                segura e comercialmente viável.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* ======================================================== */}
         {/* CONTATO DIRETO                                           */}
         {/* ======================================================== */}
-        <section id="contato" className="space-y-4 sm:space-y-6 border-t border-[#1c1c1c] pt-10 sm:pt-12">
-          <div className="space-y-1">
-            <h2 className="text-sm sm:text-base font-medium text-white">Contato Direto</h2>
-            <p className="text-xs sm:text-sm text-zinc-400">
-              Disponível para projetos sob medida, automações operacionais e parcerias.
+        <section id="contato" className="space-y-6 border-t border-[#1c1c20] pt-12 sm:pt-16">
+          <div className="space-y-2 max-w-xl">
+            <h2 className="text-xl sm:text-2xl font-semibold text-zinc-100 tracking-tight">
+              Vamos conversar sobre uma solução?
+            </h2>
+            <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              Disponível para desenvolvimento de projetos sob medida, automações corporativas
+              e licenciamento do SaaS NR-1.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm pt-1">
-            <Link
-              href="https://wa.me/5500000000000?text=Ol%C3%A1%20Mateus,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold text-xs sm:text-sm transition-all"
-            >
-              <span>Conversar no WhatsApp</span>
-              <ArrowUpRight className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
-            </Link>
-
+          <div className="flex flex-wrap items-center gap-3 pt-1">
             <Link
               href="mailto:contato@mateusassis.dev"
-              className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-[#27272a] text-xs sm:text-sm transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs sm:text-sm transition-all shadow-sm"
             >
               <span>contato@mateusassis.dev</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-zinc-700" />
             </Link>
 
             <Link
               href="https://github.com/MateusAssisOliveira"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-white transition-colors text-xs sm:text-sm inline-flex items-center gap-1"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white text-xs sm:text-sm transition-colors"
             >
               <span>GitHub</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500" />

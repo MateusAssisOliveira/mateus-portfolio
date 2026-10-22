@@ -12,31 +12,31 @@ export const metadata = {
 
 export default function GeradorCertificadosCaseStudy() {
   return (
-    <div className="flex flex-col min-h-screen w-full bg-[#000000] text-[#ededed] overflow-x-hidden">
+    <div className="flex flex-col min-h-screen w-full bg-[#0f0f11] text-[#f4f4f5] overflow-x-hidden">
       <Navbar />
 
       <main className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-20 space-y-12 sm:space-y-16">
         <div>
           <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-white transition-colors"
+            href="/#projetos"
+            className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-amber-400 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Voltar ao início</span>
+            <span>&larr; Voltar aos projetos</span>
           </Link>
         </div>
 
-        <section className="space-y-4 border-b border-[#1c1c1c] pb-8">
-          <div className="space-y-1">
-            <span className="text-[11px] font-mono text-zinc-500 uppercase">
+        <section className="space-y-4 border-b border-[#202025] pb-8">
+          <div className="space-y-1.5">
+            <span className="text-[11px] font-mono text-amber-400 uppercase tracking-wider block">
               Aplicação Web • SST
             </span>
-            <h1 className="text-xl sm:text-4xl font-semibold tracking-tight text-white break-words">
+            <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight text-zinc-100 break-words">
               Gerador de Certificados de Treinamento em SST
             </h1>
           </div>
 
-          <p className="text-xs sm:text-base text-zinc-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
             Aplicação desenvolvida para automatizar a emissão e padronização visual
             de certificados periciais de capacitação em Normas Regulamentadoras
             (como NR-1, NR-10, NR-35 e NR-33).
@@ -55,7 +55,7 @@ export default function GeradorCertificadosCaseStudy() {
               href="https://gerador-certificados-treinamento.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold transition-all shadow-sm"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium transition-all shadow-sm"
             >
               <span>Acessar online na Vercel</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -64,16 +64,16 @@ export default function GeradorCertificadosCaseStudy() {
               href="https://github.com/MateusAssisOliveira/gerador-certificados-treinamento"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-white transition-colors"
             >
               <span>Ver no GitHub</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500" />
             </Link>
           </div>
         </section>
 
         <section className="space-y-3 sm:space-y-4">
-          <h2 className="text-base sm:text-lg font-medium text-white">1. O Desafio</h2>
+          <h2 className="text-base sm:text-lg font-medium text-zinc-100">1. O Desafio</h2>
           <div className="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-3 sm:space-y-4">
             <p>
               Em clínicas e consultorias de Saúde e Segurança do Trabalho, cada treinamento
@@ -90,7 +90,7 @@ export default function GeradorCertificadosCaseStudy() {
         </section>
 
         <section className="space-y-3 sm:space-y-4">
-          <h2 className="text-base sm:text-lg font-medium text-white">2. A Solução</h2>
+          <h2 className="text-base sm:text-lg font-medium text-zinc-100">2. A Solução</h2>
           <div className="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-3 sm:space-y-4">
             <p>
               Desenvolvi uma ferramenta web direta ao ponto: o operador insere a lista
@@ -105,18 +105,18 @@ export default function GeradorCertificadosCaseStudy() {
           </div>
         </section>
 
-        <div className="border-t border-[#1c1c1c] pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs sm:text-sm">
+        <div className="border-t border-[#202025] pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs sm:text-sm">
           <Link
-            href="/"
+            href="/#projetos"
             className="text-zinc-400 hover:text-white transition-colors"
           >
-            &larr; Voltar ao portfólio
+            &larr; Voltar aos projetos
           </Link>
           <Link
             href="https://gerador-certificados-treinamento.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold transition-all"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium transition-all"
           >
             <span>Testar aplicação online</span>
             <ArrowUpRight className="w-3.5 h-3.5" />

@@ -12,33 +12,33 @@ export const metadata = {
 
 export default function SaasNr1CaseStudy() {
   return (
-    <div className="flex flex-col min-h-screen w-full bg-[#000000] text-[#ededed] overflow-x-hidden">
+    <div className="flex flex-col min-h-screen w-full bg-[#0f0f11] text-[#f4f4f5] overflow-x-hidden">
       <Navbar />
 
       <main className="flex-1 max-w-3xl w-full mx-auto px-4 sm:px-6 py-10 sm:py-20 space-y-12 sm:space-y-16">
         {/* Voltar */}
         <div>
           <Link
-            href="/"
-            className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-white transition-colors"
+            href="/#projetos"
+            className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-amber-400 transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Voltar ao início</span>
+            <span>&larr; Voltar aos projetos</span>
           </Link>
         </div>
 
         {/* Header do Estudo */}
-        <section className="space-y-4 border-b border-[#1c1c1c] pb-8">
-          <div className="space-y-1">
-            <span className="text-[11px] font-mono text-zinc-500 uppercase">
-              Estudo de Caso • SaaS B2B
+        <section className="space-y-5 border-b border-[#202025] pb-8">
+          <div className="space-y-2">
+            <span className="text-[11px] font-mono text-amber-400 uppercase tracking-wider block">
+              Estudo de Caso • SaaS Regulatório B2B
             </span>
-            <h1 className="text-xl sm:text-4xl font-semibold tracking-tight text-white break-words">
+            <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight text-zinc-100 break-words">
               SaaS de Gestão de Avaliações Psicossociais da NR-1
             </h1>
           </div>
 
-          <p className="text-xs sm:text-base text-zinc-400 leading-relaxed">
+          <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
             Plataforma corporativa para coleta, cálculo psicométrico e geração
             serverless de laudos técnicos periciais de Saúde e Segurança do
             Trabalho (SST), em conformidade com as normas NR-1 e NR-17.
@@ -53,11 +53,31 @@ export default function SaasNr1CaseStudy() {
             <span>•</span>
             <span>Puppeteer Serverless</span>
           </div>
+
+          {/* Especificações Técnicas em Linha */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-[#202025] text-xs">
+            <div>
+              <span className="font-mono text-base font-semibold text-zinc-100 block">70% Quórum</span>
+              <span className="text-zinc-500 text-[11px]">Validação pericial</span>
+            </div>
+            <div>
+              <span className="font-mono text-base font-semibold text-zinc-100 block">&lt; 5s Emissão</span>
+              <span className="text-zinc-500 text-[11px]">Laudo pericial A4</span>
+            </div>
+            <div>
+              <span className="font-mono text-base font-semibold text-zinc-100 block">80%+ Redução</span>
+              <span className="text-zinc-500 text-[11px]">De tempo de clínica</span>
+            </div>
+            <div>
+              <span className="font-mono text-base font-semibold text-zinc-100 block">Postgres RLS</span>
+              <span className="text-zinc-500 text-[11px]">Multi-tenant seguro</span>
+            </div>
+          </div>
         </section>
 
         {/* Contexto & O Problema */}
         <section className="space-y-3 sm:space-y-4">
-          <h2 className="text-base sm:text-lg font-medium text-white">1. O Contexto e a Dor de Negócio</h2>
+          <h2 className="text-base sm:text-lg font-medium text-zinc-100">1. O Contexto e a Dor de Negócio</h2>
           <div className="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-3 sm:space-y-4">
             <p>
               Com a atualização das normas NR-1 e NR-17 pelo Ministério do Trabalho,
@@ -144,8 +164,8 @@ export default function SaasNr1CaseStudy() {
         </section>
 
         {/* Impacto & Resultados */}
-        <section className="space-y-3 sm:space-y-4 border-t border-[#1c1c1c] pt-8">
-          <h2 className="text-base sm:text-lg font-medium text-white">4. Resultados Obtidos</h2>
+        <section className="space-y-3 sm:space-y-4 border-t border-[#202025] pt-8">
+          <h2 className="text-base sm:text-lg font-medium text-zinc-100">4. Resultados Obtidos</h2>
           <div className="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-3">
             <p>
               A plataforma reduziu em mais de 80% o tempo necessário para redigir e emitir um laudo pericial,
@@ -156,18 +176,16 @@ export default function SaasNr1CaseStudy() {
         </section>
 
         {/* Contato Final */}
-        <div className="border-t border-[#1c1c1c] pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs sm:text-sm">
+        <div className="border-t border-[#202025] pt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs sm:text-sm">
           <Link
-            href="/"
+            href="/#projetos"
             className="text-zinc-400 hover:text-white transition-colors"
           >
-            &larr; Voltar ao portfólio
+            &larr; Voltar aos projetos
           </Link>
           <Link
-            href="https://wa.me/5500000000000?text=Ol%C3%A1%20Mateus,%20gostaria%20de%20conversar%20sobre%20o%20SaaS%20NR-1."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-white hover:bg-zinc-200 text-black font-semibold text-xs sm:text-sm transition-all"
+            href="mailto:contato@mateusassis.dev?subject=Conversa%20sobre%20o%20SaaS%20NR-1"
+            className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs sm:text-sm transition-all"
           >
             <span>Conversar sobre a ferramenta</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
