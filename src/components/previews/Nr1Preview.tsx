@@ -1,92 +1,65 @@
-import { ShieldCheck, FileText } from "lucide-react";
+import React from "react";
+import { ShieldCheck, FileText, Check } from "lucide-react";
 
 export function Nr1Preview() {
   return (
-    <div className="w-full max-w-full overflow-hidden rounded-xl border border-[#27272a] bg-[#121215] shadow-2xl">
-      {/* Window Titlebar */}
-      <div className="flex items-center justify-between px-3.5 py-2.5 border-b border-[#222226] bg-[#16161a] text-zinc-400 text-xs">
-        <div className="flex items-center gap-2">
-          <div className="flex gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-zinc-700/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-zinc-700/80" />
-            <span className="w-2.5 h-2.5 rounded-full bg-zinc-700/80" />
-          </div>
-          <span className="font-mono text-[11px] text-zinc-400 pl-1 hidden sm:inline">
-            app.nr1-sst.com/laudo-pericial
+    <div className="w-full max-w-full overflow-hidden rounded-xl border border-[#1e222b] bg-[#161922] p-4 sm:p-5 space-y-3.5 font-sans text-xs">
+      {/* Header */}
+      <div className="flex items-center justify-between pb-2.5 border-b border-[#1e222b] text-[#a3aab8] gap-2">
+        <div className="flex items-center gap-1.5 min-w-0">
+          <ShieldCheck className="w-4 h-4 text-[#38bdf8] shrink-0" />
+          <span className="font-semibold text-xs text-[#f1f3f7] truncate">
+            Matriz de Risco NR-1
           </span>
         </div>
-        <div className="flex items-center gap-1.5 font-mono text-[10px] text-emerald-400">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-          <span>RLS Protegido</span>
+        <span className="inline-flex items-center gap-1 text-xs text-[#10b981] bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-800/40 shrink-0">
+          <Check className="w-3 h-3" />
+          <span>Quórum 78% Válido</span>
+        </span>
+      </div>
+
+      {/* Heatmap setorial com cores normativas periciais sóbrias */}
+      <div className="space-y-1.5">
+        <span className="text-xs text-[#a3aab8] block font-medium">
+          Mapeamento Setorial de Riscos
+        </span>
+        <div className="grid grid-cols-3 gap-2 text-center text-xs">
+          <div className="p-2 rounded bg-[#111318] border border-[#1e222b] text-[#f1f3f7]">
+            <span className="block font-bold">Baixo</span>
+            <span className="text-xs text-[#717887] truncate block">Adm</span>
+          </div>
+          <div className="p-2 rounded bg-amber-950/30 border border-amber-800/40 text-amber-300">
+            <span className="block font-bold">Moderado</span>
+            <span className="text-xs text-amber-200/80 truncate block">Operação</span>
+          </div>
+          <div className="p-2 rounded bg-[#111318] border border-[#1e222b] text-[#f1f3f7]">
+            <span className="block font-bold">Baixo</span>
+            <span className="text-xs text-[#717887] truncate block">Logística</span>
+          </div>
         </div>
       </div>
 
-      <div className="p-4 sm:p-5 space-y-3.5">
-        {/* Header do Relatório */}
-        <div className="flex items-center justify-between pb-2 border-b border-[#222226]">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-amber-400" />
-            <span className="font-semibold text-xs text-zinc-200">
-              Matriz de Riscos Psicossociais
-            </span>
-          </div>
-          <span className="text-[11px] font-mono text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded">
-            Quórum: 78% Válido ✓
-          </span>
+      {/* Indicadores */}
+      <div className="p-3 rounded-lg bg-[#111318] border border-[#1e222b] space-y-1 text-xs">
+        <div className="flex justify-between items-center text-[#a3aab8]">
+          <span>Inversão Likert:</span>
+          <span className="font-mono text-[#f1f3f7] font-medium">R = 6 - Nota</span>
         </div>
+        <div className="flex justify-between items-center text-[#a3aab8]">
+          <span>Isolamento de Dados:</span>
+          <span className="font-mono text-[#38bdf8] font-medium">PostgreSQL RLS</span>
+        </div>
+      </div>
 
-        {/* Tabela de Amostragem Setorial */}
-        <div className="space-y-1.5">
-          <div className="grid grid-cols-12 text-[10px] font-mono text-zinc-500 px-2 pb-1 border-b border-[#1f1f24]">
-            <span className="col-span-4">SETOR</span>
-            <span className="col-span-3 text-center">RESPOSTAS</span>
-            <span className="col-span-2 text-center">LIKERT</span>
-            <span className="col-span-3 text-right">SEVERIDADE</span>
-          </div>
-          <div className="space-y-1 text-xs">
-            <div className="grid grid-cols-12 items-center px-2 py-1.5 rounded bg-zinc-900/40 border border-white/5 text-[11px]">
-              <span className="col-span-4 text-zinc-300 font-medium truncate">Administrativo</span>
-              <span className="col-span-3 text-center font-mono text-zinc-400 text-[10px]">18 / 20</span>
-              <span className="col-span-2 text-center font-mono text-zinc-300">1.4</span>
-              <span className="col-span-3 text-right">
-                <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-950/50 text-emerald-400 border border-emerald-800/30 font-medium">
-                  Baixo
-                </span>
-              </span>
-            </div>
-            <div className="grid grid-cols-12 items-center px-2 py-1.5 rounded bg-zinc-900/40 border border-white/5 text-[11px]">
-              <span className="col-span-4 text-zinc-300 font-medium truncate">Operação / Fábrica</span>
-              <span className="col-span-3 text-center font-mono text-zinc-400 text-[10px]">35 / 40</span>
-              <span className="col-span-2 text-center font-mono text-amber-300 font-semibold">3.8</span>
-              <span className="col-span-3 text-right">
-                <span className="px-1.5 py-0.5 rounded text-[10px] bg-amber-950/60 text-amber-300 border border-amber-800/40 font-medium">
-                  Moderado
-                </span>
-              </span>
-            </div>
-            <div className="grid grid-cols-12 items-center px-2 py-1.5 rounded bg-zinc-900/40 border border-white/5 text-[11px]">
-              <span className="col-span-4 text-zinc-300 font-medium truncate">Logística & Frotas</span>
-              <span className="col-span-3 text-center font-mono text-zinc-400 text-[10px]">12 / 15</span>
-              <span className="col-span-2 text-center font-mono text-zinc-300">1.8</span>
-              <span className="col-span-3 text-right">
-                <span className="px-1.5 py-0.5 rounded text-[10px] bg-emerald-950/50 text-emerald-400 border border-emerald-800/30 font-medium">
-                  Baixo
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Rodapé do Card com Emissão do Laudo */}
-        <div className="flex items-center justify-between pt-2.5 border-t border-[#222226] text-xs">
-          <div className="flex items-center gap-1.5 text-zinc-300 text-[11px]">
-            <FileText className="w-3.5 h-3.5 text-zinc-400" />
-            <span>Laudo Oficial A4 Formatado</span>
-          </div>
-          <span className="font-mono text-[11px] text-zinc-200">
-            3.2s via Chromium Serverless
-          </span>
-        </div>
+      {/* Status da Emissão */}
+      <div className="flex items-center justify-between pt-2 border-t border-[#1e222b] text-xs gap-2">
+        <span className="flex items-center gap-1.5 text-[#a3aab8] truncate">
+          <FileText className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
+          Laudo Pericial A4 Gerado
+        </span>
+        <span className="text-[#f1f3f7] font-mono font-medium shrink-0">
+          3.2s Serverless
+        </span>
       </div>
     </div>
   );

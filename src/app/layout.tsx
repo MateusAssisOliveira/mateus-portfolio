@@ -1,22 +1,17 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-});
-
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-serif",
-  weight: "400",
-  style: ["normal", "italic"],
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -50,9 +45,9 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} dark scroll-smooth`}
+      className={`${inter.variable} ${geistMono.variable} dark scroll-smooth`}
     >
-      <body className="min-h-screen w-full overflow-x-hidden bg-[#0f0f11] text-[#f4f4f5] antialiased selection:bg-amber-500/20 selection:text-amber-200">
+      <body className="min-h-screen w-full overflow-x-hidden bg-[#06080d] text-[#f1f3f7] antialiased selection:bg-cyan-500/25 selection:text-white">
         {children}
       </body>
     </html>

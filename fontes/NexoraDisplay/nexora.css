@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Nexora Display";
+  src: url("/fonts/NexoraDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1, h2, .display-title {
+  font-family: "Nexora Display", sans-serif;
+}

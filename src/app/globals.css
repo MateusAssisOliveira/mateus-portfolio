@@ -1,24 +1,46 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Nexora Display";
+  src: url("/fonts/NexoraDisplay-Regular.otf") format("opentype"),
+       url("/fonts/NexoraDisplay-Regular.ttf") format("truetype");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #0f0f11;
-  --foreground: #f4f4f5;
-  --surface: #151518;
-  --surface-raised: #1c1c20;
-  --muted: #a1a1aa;
-  --dim: #71717a;
-  --border: #242429;
-  --border-subtle: #1c1c20;
-  --accent: #f59e0b;
-  --accent-dim: rgba(245, 158, 11, 0.12);
+  --background: #06080d;
+  --foreground: #f1f3f7;
+  --surface: #0c1017;
+  --surface-raised: #161922;
+  --surface-hover: #1c202c;
+  --muted: #a3aab8;
+  --muted-dim: #717887;
+  --border: #1e222b;
+  --border-strong: #2c3240;
+  --accent-tech: #38bdf8;
+  --accent-warning: #f59e0b;
+  --accent-success: #10b981;
+  --font-nexora: "Nexora Display", var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-hover: var(--surface-hover);
+  --color-muted: var(--muted);
+  --color-muted-dim: var(--muted-dim);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent-tech: var(--accent-tech);
+  --color-accent-warning: var(--accent-warning);
+  --color-accent-success: var(--accent-success);
+  --font-display: var(--font-nexora);
+  --font-sans: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-geist-mono);
-  --font-serif: var(--font-serif);
 }
 
 *, ::before, ::after {
@@ -32,26 +54,58 @@ html, body {
   scroll-behavior: smooth;
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  letter-spacing: -0.012em;
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.011em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Font utility classes */
-.font-serif-title {
-  font-family: var(--font-serif), Georgia, serif;
+/* Headings de destaque e títulos de impacto: Nexora Display */
+h1, .font-display {
+  font-family: "Nexora Display", var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: 0.015em;
 }
 
-/* Scrollbar com acabamento sutil */
+/* Headings editoriais de seções e estudos: Inter para suporte integral a diacríticos (ã, ç, é) */
+h2, h3, h4 {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Parágrafos, menus, botões e formulários: Inter com legibilidade garantida */
+body, p, input, textarea, select, button, nav, .font-sans {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Scrollbar refinada */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f0f11;
+  background: var(--background);
 }
 ::-webkit-scrollbar-thumb {
-  background: #242429;
+  background: var(--border-strong);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #36363d;
+  background: #3a4254;
+}
+
+/* Microinterações e feedback tátil (Emil Kowalski) */
+.btn-press {
+  transition: transform 120ms cubic-bezier(0.16, 1, 0.3, 1), background-color 150ms ease-out, border-color 150ms ease-out;
+}
+.btn-press:active {
+  transform: scale(0.975);
+}
+
+/* Acessibilidade: respeito estrito a movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
